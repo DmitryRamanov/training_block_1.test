@@ -15,6 +15,4 @@
     * application
     * flowchart
     * main
-    * readme   
-
-    
+    * readme     
