@@ -29,29 +29,30 @@ void PrintArray(string[] array)
 /// <returns>Массив из строк, длина которых меньше либо равна 3 символа, или пустой массив</returns>
 string[] GetModifyArray(string[] array)
 {
-    int j = 0;
-    for (int i = 0; i < array.Length; i++)
+    const int maxNumberCharsInWord = 3;
+    int index_j = 0;
+    for (int index_i = 0; index_i < array.Length; index_i++)
     {
-        if (array[i].Length <= 3)
+        if (array[index_i].Length <= maxNumberCharsInWord)
         {
-            j++;
+            index_j++;
         }
     }
 
-    string[] result = new string[j];
-    j = 0;
-    for (int i = 0; i < array.Length; i++)
+    string[] result = new string[index_j];
+    index_j = 0;
+    for (int index_i = 0; index_i < array.Length; index_i++)
     {
-        if (array[i].Length <= 3)
+        if (array[index_i].Length <= maxNumberCharsInWord)
         {
-            result[j] = array[i];
-            j++;
+            result[index_j] = array[index_i];
+            index_j++;
         }
     }
     return result;
 }
 
-string[] array = new string[] { "Russia", "Denmark", "Kazan" };
+string[] array = new string[] { "hello", "2", "world", ":-)" };
 PrintArray(array);
 Console.Write(" -> ");
 PrintArray(GetModifyArray(array));
